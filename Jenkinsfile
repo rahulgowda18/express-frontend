@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/yourname/express-frontend.git'
+                git 'https://github.com/rahulgowda18/express-frontend.git'
             }
         }
         stage('Build Docker Image') {
