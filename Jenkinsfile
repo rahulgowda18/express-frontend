@@ -1,23 +1,24 @@
 pipeline {
     agent any
+
     stages {
-        stage('Clone Repo') {
+        stage('Clone Code') {
             steps {
-                git 'https://github.com/rahulgowda18/express-frontend.git'
+                git 'https://github.com/your-username/express-app.git'
             }
         }
-        stage('Build Docker Image') {
+
+        stage('Install Dependencies') {
             steps {
-                sh 'docker build -t express-app .'
+                sh 'npm install'
             }
         }
-        stage('Deploy Container') {
+
+        stage('Restart Application') {
             steps {
-                sh '''
-                docker rm -f express-container || true
-                docker run -d -p 3000:3000 --name express-container express-app
-                '''
+                sh 'pm2 restart express-app || pm2 start app.js --name express-app'
             }
         }
     }
 }
+
