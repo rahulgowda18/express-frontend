@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Code') {
             steps {
-                git 'https://github.com/your-username/express-app.git'
+                git 'https://github.com/rahulgowda18/express-frontend.git'
             }
         }
 
