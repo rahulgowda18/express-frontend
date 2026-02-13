@@ -16,7 +16,7 @@ pipeline {
 
         stage('Restart Application') {
             steps {
-                sh 'pm2 restart express-app || pm2 start app.js --name express-app'
+                sh 'pm2 restart express-app || pm2 start index.js --name express-app'
             }
         }
     }
